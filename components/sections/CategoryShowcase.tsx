@@ -1,4 +1,6 @@
 import Container from "../ui/Container";
+import Image from "next/image";
+import { getShopImagePath } from "@/utils/imagePath";
 
 interface Category {
   title: string;
@@ -16,7 +18,7 @@ const categories: Category[] = [
     tagline: "Memorable Moments with Family",
     href: "/categories/dining-room",
     color: "blue",
-    image: "/Shop - Teecherz Home & Office/imgi_9_gir.jpg",
+    image: getShopImagePath("imgi_9_gir.jpg"),
   },
   {
     title: "Living Room",
@@ -24,7 +26,7 @@ const categories: Category[] = [
     tagline: "Comfort beyond your needs",
     href: "/categories/living-room",
     color: "orange",
-    image: "/Shop - Teecherz Home & Office/imgi_33_lounge-980x980.jpg",
+    image: getShopImagePath("imgi_33_lounge-980x980.jpg"),
   },
   {
     title: "Bedroom Suites",
@@ -32,7 +34,7 @@ const categories: Category[] = [
     tagline: "Timeless Elegance",
     href: "/categories/bedroom",
     color: "grey",
-    image: "/Shop - Teecherz Home & Office/imgi_34_bedroom-980x980.jpg",
+    image: getShopImagePath("imgi_34_bedroom-980x980.jpg"),
   },
 ];
 
@@ -71,12 +73,13 @@ export default function CategoryShowcase() {
               
               {/* Image Section - Right */}
               <div className="relative flex-shrink-0 overflow-hidden">
-                <div className="h-full w-32 bg-gradient-to-br from-gray-100 to-gray-200 transition-transform duration-500 group-hover:scale-110 md:w-40 lg:w-48">
+                <div className="relative h-full w-32 bg-gradient-to-br from-gray-100 to-gray-200 transition-transform duration-500 group-hover:scale-110 md:w-40 lg:w-48">
                   {category.image ? (
-                    <img
+                    <Image
                       src={category.image}
                       alt={category.title}
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                   ) : (
                     <div className="flex h-full w-full items-center justify-center transition-transform duration-500 group-hover:scale-110">

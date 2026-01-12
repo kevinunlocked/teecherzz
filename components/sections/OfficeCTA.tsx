@@ -1,6 +1,7 @@
 import Container from "../ui/Container";
 import Button from "../ui/Button";
 import Image from "next/image";
+import { getShopImagePath } from "@/utils/imagePath";
 
 export default function OfficeCTA() {
   return (
@@ -11,7 +12,7 @@ export default function OfficeCTA() {
           <div className="order-2 lg:order-1">
             <div className="group aspect-square w-full overflow-hidden rounded-2xl bg-gradient-to-br from-gray-100 to-gray-200 transition-all duration-500 hover:shadow-xl hover:scale-[1.02]">
               <Image
-                src="/Shop - Teecherz Home & Office/imgi_25_office2-1.jpg"
+                src={getShopImagePath("imgi_25_office2-1.jpg")}
                 alt="Office Furniture"
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-110"

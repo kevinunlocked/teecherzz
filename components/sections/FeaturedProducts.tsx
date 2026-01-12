@@ -2,6 +2,7 @@ import Container from "../ui/Container";
 import SectionHeader from "../ui/SectionHeader";
 import Button from "../ui/Button";
 import Image from "next/image";
+import { getShopImagePath } from "@/utils/imagePath";
 
 interface Product {
   id: string;
@@ -17,49 +18,49 @@ const featuredProducts: Product[] = [
     name: "Cushion Green",
     price: "USD 7.00",
     href: "/product/cushion-green",
-    image: "/Shop - Teecherz Home & Office/imgi_13_DSC_3183-300x225.jpg",
+    image: getShopImagePath("imgi_13_DSC_3183-300x225.jpg"),
   },
   {
     id: "2",
     name: "Cushion Picky",
     price: "USD 7.00",
     href: "/product/cushion-picky",
-    image: "/Shop - Teecherz Home & Office/imgi_14_DSC_3184-300x225.jpg",
+    image: getShopImagePath("imgi_14_DSC_3184-300x225.jpg"),
   },
   {
     id: "3",
     name: "Cushion Red",
     price: "USD 7.00",
     href: "/product/cushion-red",
-    image: "/Shop - Teecherz Home & Office/imgi_15_DSC_3204-300x225.jpg",
+    image: getShopImagePath("imgi_15_DSC_3204-300x225.jpg"),
   },
   {
     id: "4",
     name: "Cushion Lefy",
     price: "USD 7.00",
     href: "/product/cushion-lefy",
-    image: "/Shop - Teecherz Home & Office/imgi_16_DSC_3205-300x225.jpg",
+    image: getShopImagePath("imgi_16_DSC_3205-300x225.jpg"),
   },
   {
     id: "5",
     name: "Cushion Red stripe",
     price: "USD 7.00",
     href: "/product/cushion-red-stripe",
-    image: "/Shop - Teecherz Home & Office/imgi_17_DSC_3224-300x225.jpg",
+    image: getShopImagePath("imgi_17_DSC_3224-300x225.jpg"),
   },
   {
     id: "6",
     name: "Cushion Galaxy Blue",
     price: "USD 7.00",
     href: "/product/cushion-galaxy-blue",
-    image: "/Shop - Teecherz Home & Office/imgi_18_DSC_3225-300x225.jpg",
+    image: getShopImagePath("imgi_18_DSC_3225-300x225.jpg"),
   },
   {
     id: "7",
     name: "Bunk Bed (Pine)",
     price: "USD 350.00",
     href: "/product/bunk-bed-pine",
-    image: "/Shop - Teecherz Home & Office/imgi_24_Bunk-Bed-Usd227-3-300x225.jpg",
+    image: getShopImagePath("imgi_24_Bunk-Bed-Usd227-3-300x225.jpg"),
   },
 ];
 
