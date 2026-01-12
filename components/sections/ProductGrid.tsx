@@ -149,10 +149,10 @@ export default function ProductGrid() {
           ))}
         </div>
 
-        <div className={`mt-16 text-center transition-all duration-1000 delay-500 ${
+        <div className={`mt-10 sm:mt-12 md:mt-16 text-center transition-all duration-1000 delay-500 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}>
-          <Button href="/shop" variant="primary">
+          <Button href="/shop" variant="primary" className="w-full sm:w-auto min-h-[48px] touch-manipulation">
             View All Products
           </Button>
         </div>
