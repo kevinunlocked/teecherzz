@@ -1,5 +1,8 @@
+"use client";
+
 import Container from "../ui/Container";
 import { getShopImagePath } from "@/utils/imagePath";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 interface Category {
   title: string;
@@ -42,10 +45,6 @@ const colorClasses = {
   orange: "bg-orange-50 hover:bg-orange-100",
   grey: "bg-gray-50 hover:bg-gray-100",
 };
-
-"use client";
-
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 export default function CategoryShowcase() {
   const { ref, isVisible } = useScrollAnimation();
