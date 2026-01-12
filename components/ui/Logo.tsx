@@ -14,11 +14,11 @@ export default function Logo({ className = "", showText = false }: LogoProps) {
 
   return (
     <Link href="/" className={`flex items-center space-x-3 ${className}`}>
-      {/* Logo Image - Update path when logo is added to public folder */}
+      {/* Logo Image */}
       <div className="relative h-10 w-10 flex-shrink-0">
         {!logoError ? (
           <Image
-            src="/logo.png"
+            src="/logo-1.png"
             alt="Teecherz Home & Office"
             fill
             className="object-contain"
