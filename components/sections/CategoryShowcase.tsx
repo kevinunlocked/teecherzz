@@ -94,14 +94,16 @@ export default function CategoryShowcase() {
               <div className="relative flex-shrink-0 overflow-hidden">
                 <div className="relative h-full w-32 bg-gradient-to-br from-gray-100 to-gray-200 transition-transform duration-500 group-hover:scale-110 md:w-40 lg:w-48">
                   {category.image ? (
-                    <img
-                      src={category.image}
-                      alt={category.title}
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                      loading="lazy"
-                    />
-                    {/* Subtle overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-black/5"></div>
+                    <>
+                      <img
+                        src={category.image}
+                        alt={category.title}
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        loading="lazy"
+                      />
+                      {/* Subtle overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-black/5"></div>
+                    </>
                   ) : (
                     <div className="flex h-full w-full items-center justify-center transition-transform duration-500 group-hover:scale-110">
                       <span className="text-4xl font-bold text-gray-400 transition-colors duration-300 group-hover:text-gray-600">
