@@ -1,8 +1,14 @@
-import Link from "next/link";
+"use client";
+
 import Container from "../ui/Container";
 import Logo from "../ui/Logo";
 
 export default function Footer() {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+  };
+
   return (
     <footer className="bg-gray-900 text-white">
       <Container>
@@ -13,8 +19,7 @@ export default function Footer() {
             <div className="flex space-x-4">
                 <a
                   href="https://twitter.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  onClick={handleClick}
                   className="text-gray-300 transition-all duration-500 hover:text-[#DC2626] hover:scale-125"
                   aria-label="Twitter"
                 >
@@ -24,8 +29,7 @@ export default function Footer() {
                 </a>
                 <a
                   href="https://facebook.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  onClick={handleClick}
                   className="text-gray-300 transition-all duration-500 hover:text-[#DC2626] hover:scale-125"
                   aria-label="Facebook"
                 >
@@ -35,8 +39,7 @@ export default function Footer() {
                 </a>
                 <a
                   href="https://instagram.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  onClick={handleClick}
                   className="text-gray-300 transition-all duration-500 hover:text-[#DC2626] hover:scale-125"
                   aria-label="Instagram"
                 >
@@ -46,8 +49,7 @@ export default function Footer() {
                 </a>
                 <a
                   href="https://youtube.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  onClick={handleClick}
                   className="text-gray-300 transition-all duration-500 hover:text-[#DC2626] hover:scale-125"
                   aria-label="YouTube"
                 >
@@ -83,12 +85,13 @@ export default function Footer() {
               </form>
               <p className="text-xs text-gray-400">
                 By Submitting the form you agree with our{" "}
-                <Link
+                <a
                   href="/privacy-policy-2"
+                  onClick={handleClick}
                   className="text-[#DC2626] hover:underline"
                 >
                   Terms & Conditions
-                </Link>
+                </a>
               </p>
             </div>
 
@@ -98,12 +101,14 @@ export default function Footer() {
               <div className="space-y-2">
                 <a
                   href="tel:+263242123456"
+                  onClick={handleClick}
                   className="footer-link block text-gray-300 transition-all duration-500 hover:text-[#DC2626] hover:translate-x-1"
                 >
                   +263 242 123 456
                 </a>
                 <a
                   href="mailto:info@teecherz.com"
+                  onClick={handleClick}
                   className="footer-link block text-gray-300 transition-all duration-500 hover:text-[#DC2626] hover:translate-x-1"
                 >
                   info@teecherz.com
@@ -121,28 +126,31 @@ export default function Footer() {
               </h3>
               <ul className="space-y-2">
                 <li>
-                  <Link
+                  <a
                     href="/about-teecherz-home-and-office"
+                    onClick={handleClick}
                     className="text-sm text-gray-300 transition-all duration-500 hover:text-[#DC2626] hover:translate-x-1"
                   >
                     About Teecherz
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link
+                  <a
                     href="/general-disclaimer"
+                    onClick={handleClick}
                     className="text-sm text-gray-300 transition-all duration-500 hover:text-[#DC2626] hover:translate-x-1"
                   >
                     General Disclaimer
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link
+                  <a
                     href="/privacy-policy-2"
+                    onClick={handleClick}
                     className="text-sm text-gray-300 transition-all duration-500 hover:text-[#DC2626] hover:translate-x-1"
                   >
                     Privacy Policy
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </div>
@@ -154,20 +162,22 @@ export default function Footer() {
               </h3>
               <ul className="space-y-2">
                 <li>
-                  <Link
+                  <a
                     href="/product-warranty"
+                    onClick={handleClick}
                     className="text-sm text-gray-300 transition-all duration-500 hover:text-[#DC2626] hover:translate-x-1"
                   >
                     Product Warranty
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link
+                  <a
                     href="/faq"
+                    onClick={handleClick}
                     className="text-sm text-gray-300 transition-all duration-500 hover:text-[#DC2626] hover:translate-x-1"
                   >
                     FAQ
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </div>
@@ -179,36 +189,40 @@ export default function Footer() {
               </h3>
               <ul className="space-y-2">
                 <li>
-                  <Link
+                  <a
                     href="/branch-network"
+                    onClick={handleClick}
                     className="text-sm text-gray-300 transition-all duration-500 hover:text-[#DC2626] hover:translate-x-1"
                   >
                     Branch Network
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link
+                  <a
                     href="/purchase-options-and-services"
+                    onClick={handleClick}
                     className="text-sm text-gray-300 transition-all duration-500 hover:text-[#DC2626] hover:translate-x-1"
                   >
                     Purchase Options & Services
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link
+                  <a
                     href="/our-covid-19-response"
+                    onClick={handleClick}
                     className="text-sm text-gray-300 transition-all duration-500 hover:text-[#DC2626] hover:translate-x-1"
                   >
                     Covid 19 Response
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link
+                  <a
                     href="/downloads"
+                    onClick={handleClick}
                     className="text-sm text-gray-300 transition-all duration-500 hover:text-[#DC2626] hover:translate-x-1"
                   >
                     Downloads
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </div>
@@ -218,28 +232,31 @@ export default function Footer() {
               <h3 className="footer-heading mb-4 text-white">Service</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link
+                  <a
                     href="/faq"
+                    onClick={handleClick}
                     className="footer-link text-gray-300 transition-all duration-500 hover:text-[#DC2626] hover:translate-x-1"
                   >
                     Help & Faq's
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link
+                  <a
                     href="/privacy-policy-2"
+                    onClick={handleClick}
                     className="footer-link text-gray-300 transition-all duration-500 hover:text-[#DC2626] hover:translate-x-1"
                   >
                     Privacy Policy
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link
+                  <a
                     href="/product-warranty"
+                    onClick={handleClick}
                     className="footer-link text-gray-300 transition-all duration-500 hover:text-[#DC2626] hover:translate-x-1"
                   >
                     Return Policy
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </div>
@@ -255,8 +272,7 @@ export default function Footer() {
                 Developed by{" "}
                 <a
                   href="https://www.techdweto.co.zw/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  onClick={handleClick}
                   className="text-[#DC2626] hover:underline"
                 >
                   Techdweto Inc.

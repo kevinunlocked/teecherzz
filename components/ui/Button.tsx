@@ -1,4 +1,5 @@
-import Link from "next/link";
+"use client";
+
 import { ReactNode } from "react";
 
 interface ButtonProps {
@@ -30,16 +31,22 @@ export default function Button({
 
   const combinedClassName = `${baseStyles} ${variantStyles[variant]} ${className}`;
 
-  if (href) {
-    return (
-      <Link href={href} className={combinedClassName}>
-        {children}
-      </Link>
-    );
-  }
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (onClick) {
+      onClick();
+    }
+  };
 
+  // For demo: Always render as button, never navigate
   return (
-    <button type={type} onClick={onClick} className={combinedClassName}>
+    <button 
+      type={type} 
+      onClick={handleClick} 
+      className={combinedClassName}
+      style={{ cursor: href ? "pointer" : "default" }}
+    >
       {children}
     </button>
   );

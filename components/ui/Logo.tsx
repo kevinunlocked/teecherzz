@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
 
 interface LogoProps {
@@ -12,8 +11,17 @@ interface LogoProps {
 export default function Logo({ className = "", showText = false }: LogoProps) {
   const [logoError, setLogoError] = useState(false);
 
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+  };
+
   return (
-    <Link href="/" className={`group flex items-center space-x-3 transition-all duration-300 hover:scale-105 ${className}`}>
+    <a 
+      href="/" 
+      onClick={handleClick}
+      className={`group flex items-center space-x-3 transition-all duration-300 hover:scale-105 ${className}`}
+    >
       {/* Logo Image */}
       <div className="relative h-10 w-10 flex-shrink-0 transition-transform duration-300 group-hover:rotate-3">
         {!logoError ? (

@@ -1,8 +1,14 @@
-import Link from "next/link";
+"use client";
+
 import Container from "../ui/Container";
 import Logo from "../ui/Logo";
 
 export default function Header() {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+  };
+
   return (
     <header className="sticky top-0 z-50 border-b border-foreground/10 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <Container>
@@ -10,57 +16,65 @@ export default function Header() {
           <Logo />
 
           <nav className="hidden items-center space-x-6 lg:space-x-8 md:flex">
-            <Link
+            <a
               href="/?product_cat=bedroom-furniture"
+              onClick={handleClick}
               className="nav-link-uppercase relative text-foreground/80 transition-all duration-500 ease-out hover:text-[#DC2626] hover:scale-105 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-[#DC2626] after:transition-all after:duration-500 after:ease-out hover:after:w-full"
             >
               Bedroom
-            </Link>
-            <Link
+            </a>
+            <a
               href="/product-category/living-room"
+              onClick={handleClick}
               className="nav-link-uppercase relative text-foreground/80 transition-all duration-500 ease-out hover:text-[#DC2626] hover:scale-105 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-[#DC2626] after:transition-all after:duration-500 after:ease-out hover:after:w-full"
             >
               Living Room
-            </Link>
-            <Link
+            </a>
+            <a
               href="/?product_cat=dining-room-furniture"
+              onClick={handleClick}
               className="nav-link-uppercase relative text-foreground/80 transition-all duration-500 ease-out hover:text-[#DC2626] hover:scale-105 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-[#DC2626] after:transition-all after:duration-500 after:ease-out hover:after:w-full"
             >
               Dining
-            </Link>
-            <Link
+            </a>
+            <a
               href="/?product_cat=electronics"
+              onClick={handleClick}
               className="nav-link-uppercase relative text-foreground/80 transition-all duration-500 ease-out hover:text-[#DC2626] hover:scale-105 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-[#DC2626] after:transition-all after:duration-500 after:ease-out hover:after:w-full"
             >
               Electronics
-            </Link>
-            <Link
+            </a>
+            <a
               href="/?product_cat=kitchen-appliances"
+              onClick={handleClick}
               className="nav-link-uppercase relative text-foreground/80 transition-all duration-500 ease-out hover:text-[#DC2626] hover:scale-105 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-[#DC2626] after:transition-all after:duration-500 after:ease-out hover:after:w-full"
             >
               Kitchen
-            </Link>
-            <Link
+            </a>
+            <a
               href="/?product_cat=office-furniture"
+              onClick={handleClick}
               className="nav-link-uppercase relative text-foreground/80 transition-all duration-500 ease-out hover:text-[#DC2626] hover:scale-105 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-[#DC2626] after:transition-all after:duration-500 after:ease-out hover:after:w-full"
             >
               Office
-            </Link>
+            </a>
           </nav>
 
           <div className="hidden items-center space-x-4 md:flex">
-            <Link
+            <a
               href="/my-account"
+              onClick={handleClick}
               className="nav-link relative text-foreground/70 transition-all duration-500 ease-out hover:text-[#DC2626] hover:scale-105 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-[#DC2626] after:transition-all after:duration-500 after:ease-out hover:after:w-full"
             >
               My Account
-            </Link>
-            <Link
+            </a>
+            <a
               href="https://creditfacility.teecherz.com"
+              onClick={handleClick}
               className="nav-link relative text-foreground/70 transition-all duration-500 ease-out hover:text-[#DC2626] hover:scale-105 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-[#DC2626] after:transition-all after:duration-500 after:ease-out hover:after:w-full"
             >
               Credit Facility
-            </Link>
+            </a>
           </div>
 
           <div className="flex items-center space-x-4">

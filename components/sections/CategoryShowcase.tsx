@@ -43,7 +43,14 @@ const colorClasses = {
   grey: "bg-gray-50 hover:bg-gray-100",
 };
 
+"use client";
+
 export default function CategoryShowcase() {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+  };
+
   return (
     <section className="bg-background py-20 sm:py-28 lg:py-32">
       <Container>
@@ -52,6 +59,7 @@ export default function CategoryShowcase() {
             <a
               key={index}
               href={category.href}
+              onClick={handleClick}
               className={`group relative flex min-h-[200px] overflow-hidden rounded-2xl transition-all duration-500 ease-in-out hover:shadow-lg hover:scale-[1.02] md:min-h-[240px] ${colorClasses[category.color]}`}
             >
               {/* Text Section - Left */}
