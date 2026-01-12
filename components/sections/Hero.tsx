@@ -1,7 +1,11 @@
+"use client";
+
 import Container from "../ui/Container";
 import Button from "../ui/Button";
 import Image from "next/image";
-import { getShopImagePath } from "@/utils/imagePath";
+
+// Constant image path to prevent re-computation on every render
+const HERO_IMAGE_PATH = "/Shop - Teecherz Home & Office/hero-living-room.jpg";
 
 export default function Hero() {
   return (
@@ -9,15 +13,20 @@ export default function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src={getShopImagePath("hero-living-room.jpg")}
+          src={HERO_IMAGE_PATH}
           alt="Teecherz Living Room"
           fill
           className="object-cover"
           priority
           unoptimized
+          sizes="100vw"
+          quality={90}
+          style={{
+            objectFit: "cover",
+          }}
         />
         {/* Overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-black/40 pointer-events-none"></div>
       </div>
       
       <Container className="relative z-10">
