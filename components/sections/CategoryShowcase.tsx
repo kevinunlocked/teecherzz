@@ -45,37 +45,49 @@ const colorClasses = {
 
 "use client";
 
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+
 export default function CategoryShowcase() {
+  const { ref, isVisible } = useScrollAnimation();
+
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     e.stopPropagation();
   };
 
   return (
-    <section className="bg-background py-20 sm:py-28 lg:py-32">
+    <section className="bg-background py-24 sm:py-32 lg:py-40">
       <Container>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div
+          ref={ref}
+          className={`grid grid-cols-1 gap-10 md:grid-cols-3 transition-all duration-1000 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+          }`}
+        >
           {categories.map((category, index) => (
             <a
               key={index}
               href={category.href}
               onClick={handleClick}
-              className={`group relative flex min-h-[200px] overflow-hidden rounded-2xl transition-all duration-500 ease-in-out hover:shadow-lg hover:scale-[1.02] md:min-h-[240px] ${colorClasses[category.color]}`}
+              className={`group relative flex min-h-[220px] overflow-hidden rounded-2xl transition-all duration-500 ease-in-out hover:shadow-xl hover:scale-[1.02] md:min-h-[280px] ${colorClasses[category.color]}`}
+              style={{
+                transitionDelay: `${index * 100}ms`,
+              }}
             >
               {/* Text Section - Left */}
-              <div className="relative z-10 flex flex-1 flex-col justify-center p-8 transition-all duration-500 group-hover:translate-x-1">
-                <p className="category-subtitle mb-2 text-foreground/60 transition-colors duration-300 group-hover:text-foreground/80">
+              <div className="relative z-10 flex flex-1 flex-col justify-center p-10 transition-all duration-500 group-hover:translate-x-2">
+                <p className="category-subtitle mb-3 text-foreground/60 transition-colors duration-300 group-hover:text-foreground/80">
                   {category.subtitle}
                 </p>
-                <h3 className="category-title text-foreground transition-colors duration-300 group-hover:text-[#DC2626]">
+                <h3 className="category-title text-foreground mb-3 transition-colors duration-300 group-hover:text-[#DC2626]">
                   {category.title}
                 </h3>
                 {category.tagline && (
-                  <p className="mt-2 text-sm font-medium text-foreground/70 transition-colors duration-300 group-hover:text-foreground/90">
+                  <p className="mb-4 text-sm font-medium text-foreground/70 transition-colors duration-300 group-hover:text-foreground/90">
                     {category.tagline}
                   </p>
                 )}
-                <div className="mt-4 h-0.5 w-12 bg-[#DC2626] transition-all duration-500 ease-out group-hover:w-full"></div>
+                <div className="h-0.5 w-12 bg-[#DC2626] transition-all duration-700 ease-out group-hover:w-full origin-left"></div>
               </div>
               
               {/* Image Section - Right */}
