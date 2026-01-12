@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
+// Inter as fallback font
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -24,6 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${inter.variable} font-sans antialiased`}
+        style={{ fontFamily: "'General Sans', var(--font-inter), sans-serif" }}
       >
         {children}
       </body>
