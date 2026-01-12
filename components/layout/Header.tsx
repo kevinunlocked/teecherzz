@@ -12,37 +12,37 @@ export default function Header() {
           <nav className="hidden items-center space-x-6 lg:space-x-8 md:flex">
             <Link
               href="/?product_cat=bedroom-furniture"
-              className="nav-link-uppercase text-foreground/80 transition-colors hover:text-[#DC2626]"
+              className="nav-link-uppercase relative text-foreground/80 transition-all duration-300 hover:text-[#DC2626] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-[#DC2626] after:transition-all after:duration-300 hover:after:w-full"
             >
               Bedroom
             </Link>
             <Link
               href="/product-category/living-room"
-              className="nav-link-uppercase text-foreground/80 transition-colors hover:text-[#DC2626]"
+              className="nav-link-uppercase relative text-foreground/80 transition-all duration-300 hover:text-[#DC2626] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-[#DC2626] after:transition-all after:duration-300 hover:after:w-full"
             >
               Living Room
             </Link>
             <Link
               href="/?product_cat=dining-room-furniture"
-              className="nav-link-uppercase text-foreground/80 transition-colors hover:text-[#DC2626]"
+              className="nav-link-uppercase relative text-foreground/80 transition-all duration-300 hover:text-[#DC2626] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-[#DC2626] after:transition-all after:duration-300 hover:after:w-full"
             >
               Dining
             </Link>
             <Link
               href="/?product_cat=electronics"
-              className="nav-link-uppercase text-foreground/80 transition-colors hover:text-[#DC2626]"
+              className="nav-link-uppercase relative text-foreground/80 transition-all duration-300 hover:text-[#DC2626] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-[#DC2626] after:transition-all after:duration-300 hover:after:w-full"
             >
               Electronics
             </Link>
             <Link
               href="/?product_cat=kitchen-appliances"
-              className="nav-link-uppercase text-foreground/80 transition-colors hover:text-[#DC2626]"
+              className="nav-link-uppercase relative text-foreground/80 transition-all duration-300 hover:text-[#DC2626] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-[#DC2626] after:transition-all after:duration-300 hover:after:w-full"
             >
               Kitchen
             </Link>
             <Link
               href="/?product_cat=office-furniture"
-              className="nav-link-uppercase text-foreground/80 transition-colors hover:text-[#DC2626]"
+              className="nav-link-uppercase relative text-foreground/80 transition-all duration-300 hover:text-[#DC2626] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-[#DC2626] after:transition-all after:duration-300 hover:after:w-full"
             >
               Office
             </Link>
@@ -51,13 +51,13 @@ export default function Header() {
           <div className="hidden items-center space-x-4 md:flex">
             <Link
               href="/my-account"
-              className="nav-link text-foreground/70 transition-colors hover:text-[#DC2626]"
+              className="nav-link relative text-foreground/70 transition-all duration-300 hover:text-[#DC2626] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-[#DC2626] after:transition-all after:duration-300 hover:after:w-full"
             >
               My Account
             </Link>
             <Link
               href="https://creditfacility.teecherz.com"
-              className="nav-link text-foreground/70 transition-colors hover:text-[#DC2626]"
+              className="nav-link relative text-foreground/70 transition-all duration-300 hover:text-[#DC2626] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-[#DC2626] after:transition-all after:duration-300 hover:after:w-full"
             >
               Credit Facility
             </Link>
