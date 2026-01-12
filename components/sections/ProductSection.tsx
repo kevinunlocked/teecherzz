@@ -22,7 +22,7 @@ export default function ProductSection({
   products,
 }: ProductSectionProps) {
   return (
-    <section className="bg-background py-16 sm:py-24">
+    <section className="bg-background py-20 sm:py-28 lg:py-32">
       <Container>
         <div className="mb-8 flex items-center justify-between">
           <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
@@ -33,7 +33,7 @@ export default function ProductSection({
           </Button>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {products.map((product) => (
             <a
               key={product.id}
@@ -57,11 +57,11 @@ export default function ProductSection({
                 )}
               </div>
               <div className="mt-4 flex flex-col">
-                <h3 className="text-lg font-semibold text-foreground group-hover:text-[#DC2626] transition-colors">
+                <h3 className="product-name text-foreground group-hover:text-[#DC2626] transition-colors">
                   {product.name}
                 </h3>
                 {product.price && (
-                  <p className="mt-2 text-base font-semibold text-foreground">
+                  <p className="product-price mt-2 text-foreground">
                     {product.price}
                   </p>
                 )}

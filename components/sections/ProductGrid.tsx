@@ -68,10 +68,10 @@ const products: Product[] = [
 
 export default function ProductGrid() {
   return (
-    <section className="bg-background py-16 sm:py-24">
+    <section className="bg-background py-20 sm:py-28 lg:py-32">
       <Container>
         <SectionHeader
-          subtitle="FEATURED PRODUCTS"
+          subtitle="RECENTLY RELEASED"
           title="Latest Collection"
         />
 
@@ -98,17 +98,17 @@ export default function ProductGrid() {
                 )}
               </div>
               <div className="mt-4 flex flex-col">
-                <h3 className="text-lg font-semibold text-foreground group-hover:text-foreground/80">
+                <h3 className="product-name text-foreground group-hover:text-[#DC2626] transition-colors">
                   {product.name}
                 </h3>
                 <div className="mt-2 flex items-center gap-2">
                   {product.price && (
-                    <p className="text-base font-semibold text-foreground">
+                    <p className="product-price text-foreground">
                       {product.price}
                     </p>
                   )}
                   {product.originalPrice && (
-                    <p className="text-sm text-foreground/50 line-through">
+                    <p className="product-price-original text-foreground/50 line-through">
                       {product.originalPrice}
                     </p>
                   )}

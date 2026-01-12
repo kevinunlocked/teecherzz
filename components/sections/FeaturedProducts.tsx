@@ -58,7 +58,7 @@ const featuredProducts: Product[] = [
 
 export default function FeaturedProducts() {
   return (
-    <section className="bg-background py-16 sm:py-24">
+    <section className="bg-background py-20 sm:py-28 lg:py-32">
       <Container>
         <SectionHeader subtitle="FEATURED" title="Featured Products" />
 
@@ -86,10 +86,10 @@ export default function FeaturedProducts() {
                 )}
               </div>
               <div className="mt-3 flex flex-col">
-                <h3 className="text-sm font-semibold text-foreground group-hover:text-[#DC2626] transition-colors line-clamp-2">
+                <h3 className="product-name text-sm text-foreground group-hover:text-[#DC2626] transition-colors line-clamp-2">
                   {product.name}
                 </h3>
-                <p className="mt-1 text-sm font-semibold text-foreground">
+                <p className="product-price mt-1 text-sm text-foreground">
                   {product.price}
                 </p>
               </div>

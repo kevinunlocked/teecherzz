@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function OfficeCTA() {
   return (
-    <section className="bg-background py-16 sm:py-24">
+    <section className="bg-background py-20 sm:py-28 lg:py-32">
       <Container>
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
           {/* Image Section */}
@@ -20,10 +20,10 @@ export default function OfficeCTA() {
 
           {/* Content Section */}
           <div className="order-1 flex flex-col justify-center lg:order-2">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            <h2 className="section-title text-foreground">
               Create a great first impression
             </h2>
-            <p className="mt-6 text-lg leading-8 text-foreground/70">
+            <p className="text-body-large mt-6 text-foreground/70">
               Create a great first impression for your business with our modern
               secretarial desks. Designed to keep the work area organized our
               desks will help you achieve a productive day of work. Our desks
@@ -37,10 +37,10 @@ export default function OfficeCTA() {
             </div>
 
             <div className="mt-12 border-t border-gray-200 pt-8">
-              <h3 className="text-xl font-bold text-foreground">
+              <h3 className="text-xl font-bold leading-tight text-foreground">
                 Make big decisions on our first-class executive desks
               </h3>
-              <p className="mt-4 text-base leading-7 text-foreground/70">
+              <p className="text-body mt-4 text-foreground/70">
                 Spacious enough to accommodate everyday multitasking while
                 keeping your work area clutter-free and well organized. Designed
                 with the finest leather work pads to turn your organisations

@@ -12,37 +12,37 @@ export default function Header() {
           <nav className="hidden items-center space-x-6 lg:space-x-8 md:flex">
             <Link
               href="/?product_cat=bedroom-furniture"
-              className="text-sm font-semibold uppercase tracking-wide text-foreground/80 transition-colors hover:text-[#DC2626]"
+              className="nav-link-uppercase text-foreground/80 transition-colors hover:text-[#DC2626]"
             >
               Bedroom
             </Link>
             <Link
               href="/product-category/living-room"
-              className="text-sm font-semibold uppercase tracking-wide text-foreground/80 transition-colors hover:text-[#DC2626]"
+              className="nav-link-uppercase text-foreground/80 transition-colors hover:text-[#DC2626]"
             >
               Living Room
             </Link>
             <Link
               href="/?product_cat=dining-room-furniture"
-              className="text-sm font-semibold uppercase tracking-wide text-foreground/80 transition-colors hover:text-[#DC2626]"
+              className="nav-link-uppercase text-foreground/80 transition-colors hover:text-[#DC2626]"
             >
               Dining
             </Link>
             <Link
               href="/?product_cat=electronics"
-              className="text-sm font-semibold uppercase tracking-wide text-foreground/80 transition-colors hover:text-[#DC2626]"
+              className="nav-link-uppercase text-foreground/80 transition-colors hover:text-[#DC2626]"
             >
               Electronics
             </Link>
             <Link
               href="/?product_cat=kitchen-appliances"
-              className="text-sm font-semibold uppercase tracking-wide text-foreground/80 transition-colors hover:text-[#DC2626]"
+              className="nav-link-uppercase text-foreground/80 transition-colors hover:text-[#DC2626]"
             >
               Kitchen
             </Link>
             <Link
               href="/?product_cat=office-furniture"
-              className="text-sm font-semibold uppercase tracking-wide text-foreground/80 transition-colors hover:text-[#DC2626]"
+              className="nav-link-uppercase text-foreground/80 transition-colors hover:text-[#DC2626]"
             >
               Office
             </Link>
@@ -51,13 +51,13 @@ export default function Header() {
           <div className="hidden items-center space-x-4 md:flex">
             <Link
               href="/my-account"
-              className="text-sm font-medium text-foreground/70 transition-colors hover:text-[#DC2626]"
+              className="nav-link text-foreground/70 transition-colors hover:text-[#DC2626]"
             >
               My Account
             </Link>
             <Link
               href="https://creditfacility.teecherz.com"
-              className="text-sm font-medium text-foreground/70 transition-colors hover:text-[#DC2626]"
+              className="nav-link text-foreground/70 transition-colors hover:text-[#DC2626]"
             >
               Credit Facility
             </Link>

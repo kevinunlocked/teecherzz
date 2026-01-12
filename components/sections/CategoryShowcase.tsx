@@ -5,7 +5,7 @@ interface Category {
   subtitle: string;
   href: string;
   image?: string;
-  color: "blue" | "orange" | "grey" | "red";
+  color: "blue" | "orange" | "grey";
   tagline?: string;
 }
 
@@ -31,46 +31,58 @@ const categories: Category[] = [
     href: "/categories/bedroom",
     color: "grey",
   },
-  {
-    title: "Office Life",
-    subtitle: "OFFICE FURNITURE",
-    tagline: "Modern Solutions",
-    href: "/categories/office",
-    color: "red",
-  },
 ];
 
 const colorClasses = {
   blue: "bg-blue-50 hover:bg-blue-100",
   orange: "bg-orange-50 hover:bg-orange-100",
   grey: "bg-gray-50 hover:bg-gray-100",
-  red: "bg-red-50 hover:bg-red-100",
 };
 
 export default function CategoryShowcase() {
   return (
-    <section className="bg-background py-16 sm:py-24">
+    <section className="bg-background py-20 sm:py-28 lg:py-32">
       <Container>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {categories.map((category, index) => (
             <a
               key={index}
               href={category.href}
-              className={`group relative overflow-hidden rounded-2xl p-8 transition-all duration-300 ${colorClasses[category.color]}`}
+              className={`group relative flex min-h-[200px] overflow-hidden rounded-2xl transition-all duration-300 md:min-h-[240px] ${colorClasses[category.color]}`}
             >
-              <div className="relative z-10">
-                <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-foreground/60">
+              {/* Text Section - Left */}
+              <div className="relative z-10 flex flex-1 flex-col justify-center p-8">
+                <p className="category-subtitle mb-2 text-foreground/60">
                   {category.subtitle}
                 </p>
-                <h3 className="text-2xl font-bold text-foreground">
+                <h3 className="category-title text-foreground">
                   {category.title}
                 </h3>
                 {category.tagline && (
-                  <p className="mt-2 text-sm text-foreground/70">
+                  <p className="mt-2 text-sm font-medium text-foreground/70">
                     {category.tagline}
                   </p>
                 )}
                 <div className="mt-4 h-0.5 w-12 bg-[#DC2626] transition-all duration-300 group-hover:w-full"></div>
+              </div>
+              
+              {/* Image Section - Right */}
+              <div className="relative flex-shrink-0">
+                <div className="h-full w-32 bg-gradient-to-br from-gray-100 to-gray-200 md:w-40 lg:w-48">
+                  {category.image ? (
+                    <img
+                      src={category.image}
+                      alt={category.title}
+                      className="h-full w-full object-cover"
+                    />
+                  ) : (
+                    <div className="flex h-full w-full items-center justify-center">
+                      <span className="text-4xl font-bold text-gray-400">
+                        {category.title.charAt(0)}
+                      </span>
+                    </div>
+                  )}
+                </div>
               </div>
             </a>
           ))}

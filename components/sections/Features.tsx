@@ -1,44 +1,46 @@
 import Container from "../ui/Container";
-import SectionHeader from "../ui/SectionHeader";
+import {
+  FreeShippingIcon,
+  ReturnsIcon,
+  Hours24Icon,
+  FastDeliveryIcon,
+} from "../ui/Icons";
 
 interface Feature {
-  icon: string;
+  icon: React.ReactNode;
   title: string;
   description: string;
 }
 
 const features: Feature[] = [
   {
-    icon: "🛒",
-    title: "Shop online",
-    description:
-      "Avoid traffic, Save fuel, Get real-time convenience- Shop in the comfort of your home /office!",
+    icon: <FreeShippingIcon />,
+    title: "Free Shipping",
+    description: "Free Delivery",
   },
   {
-    icon: "🚚",
-    title: "Shipping",
-    description:
-      "Absolute Free delivery within a 20km radius of the main Post Office in any town.",
+    icon: <ReturnsIcon />,
+    title: "Free Shipping",
+    description: "Quick Refunds",
   },
   {
-    icon: "↩️",
-    title: "Return policy",
-    description:
-      "Whilst every care and attention is taken to ensure that our product meets your needs and offers satisfaction, If you're not entirely satisfied kindly return within 14 days from delivery date.",
+    icon: <Hours24Icon />,
+    title: "24 Hours Service",
+    description: "24/7 Support",
   },
   {
-    icon: "💳",
-    title: "Payment methods",
-    description: "Visa, Mastercard, Ecocash, Zipit, Cash, Zimswitch",
+    icon: <FastDeliveryIcon />,
+    title: "Fast Delivery",
+    description: "Quick Delivery",
   },
 ];
 
 export default function Features() {
   return (
-    <section className="bg-background py-16 sm:py-24">
+    <section className="bg-background py-20 sm:py-28 lg:py-32">
       <Container>
         <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <h2 className="section-title text-foreground">
             Order now! We're at your Absolute service
           </h2>
         </div>
@@ -48,7 +50,9 @@ export default function Features() {
               key={index}
               className="flex flex-col items-center text-center"
             >
-              <div className="mb-4 text-5xl">{feature.icon}</div>
+              <div className="mb-6 flex items-center justify-center">
+                {feature.icon}
+              </div>
               <h3 className="mb-3 text-lg font-semibold text-foreground">
                 {feature.title}
               </h3>
