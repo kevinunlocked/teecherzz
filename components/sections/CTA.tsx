@@ -1,6 +1,5 @@
 import Container from "../ui/Container";
 import Button from "../ui/Button";
-import Image from "next/image";
 import { getShopImagePath } from "@/utils/imagePath";
 
 export default function CTA() {
@@ -9,13 +8,12 @@ export default function CTA() {
       <Container>
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
           {/* Image - Left Side */}
-          <div className="group order-2 aspect-square w-full overflow-hidden rounded-2xl bg-gradient-to-br from-gray-100 to-gray-200 transition-all duration-500 hover:shadow-xl hover:scale-[1.02] lg:order-1">
-            <Image
+          <div className="group relative order-2 aspect-square w-full overflow-hidden rounded-2xl bg-gradient-to-br from-gray-100 to-gray-200 transition-all duration-500 hover:shadow-xl hover:scale-[1.02] lg:order-1">
+            <img
               src={getShopImagePath("hero-living-room.jpg")}
               alt="Teecherz Furniture"
-              fill
-              className="object-cover transition-transform duration-500 group-hover:scale-110"
-              unoptimized
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              loading="lazy"
             />
           </div>
           {/* Content - Right Side */}

@@ -1,6 +1,5 @@
 import Container from "../ui/Container";
 import Button from "../ui/Button";
-import Image from "next/image";
 
 interface Product {
   id: string;
@@ -40,14 +39,13 @@ export default function ProductSection({
               href={product.href}
               className="group flex flex-col transition-all duration-300 hover:-translate-y-1"
             >
-              <div className="aspect-square w-full overflow-hidden rounded-lg bg-gray-100 shadow-sm transition-all duration-300 group-hover:shadow-md">
+              <div className="relative aspect-square w-full overflow-hidden rounded-lg bg-gray-100 shadow-sm transition-all duration-300 group-hover:shadow-md">
                 {product.image ? (
-                  <Image
+                  <img
                     src={product.image}
                     alt={product.name}
-                    fill
-                    className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
-                    unoptimized
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+                    loading="lazy"
                   />
                 ) : (
                   <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-gray-200 to-gray-300 transition-all duration-300 group-hover:from-gray-300 group-hover:to-gray-400">

@@ -1,6 +1,5 @@
 import Container from "../ui/Container";
 import Button from "../ui/Button";
-import Image from "next/image";
 import { getShopImagePath } from "@/utils/imagePath";
 
 export default function OfficeCTA() {
@@ -10,13 +9,12 @@ export default function OfficeCTA() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
           {/* Image Section */}
           <div className="order-2 lg:order-1">
-            <div className="group aspect-square w-full overflow-hidden rounded-2xl bg-gradient-to-br from-gray-100 to-gray-200 transition-all duration-500 hover:shadow-xl hover:scale-[1.02]">
-              <Image
+            <div className="group relative aspect-square w-full overflow-hidden rounded-2xl bg-gradient-to-br from-gray-100 to-gray-200 transition-all duration-500 hover:shadow-xl hover:scale-[1.02]">
+              <img
                 src={getShopImagePath("imgi_25_office2-1.jpg")}
                 alt="Office Furniture"
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-110"
-                unoptimized
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                loading="lazy"
               />
             </div>
           </div>

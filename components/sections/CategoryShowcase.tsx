@@ -1,5 +1,4 @@
 import Container from "../ui/Container";
-import Image from "next/image";
 import { getShopImagePath } from "@/utils/imagePath";
 
 interface Category {
@@ -75,12 +74,11 @@ export default function CategoryShowcase() {
               <div className="relative flex-shrink-0 overflow-hidden">
                 <div className="relative h-full w-32 bg-gradient-to-br from-gray-100 to-gray-200 transition-transform duration-500 group-hover:scale-110 md:w-40 lg:w-48">
                   {category.image ? (
-                    <Image
+                    <img
                       src={category.image}
                       alt={category.title}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-110"
-                      unoptimized
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      loading="lazy"
                     />
                   ) : (
                     <div className="flex h-full w-full items-center justify-center transition-transform duration-500 group-hover:scale-110">
