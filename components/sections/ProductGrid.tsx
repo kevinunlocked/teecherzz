@@ -87,7 +87,7 @@ export default function ProductGrid() {
   };
 
   return (
-    <section className="bg-background py-24 sm:py-32 lg:py-40 section-transition">
+    <section className="bg-background py-16 sm:py-24 md:py-32 lg:py-40 section-transition">
       <Container>
         <SectionHeader
           subtitle="RECENTLY RELEASED"
@@ -96,7 +96,7 @@ export default function ProductGrid() {
 
         <div
           ref={ref}
-          className={`grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4 transition-all duration-1000 ${
+          className={`grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 lg:gap-10 transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
           }`}
         >
