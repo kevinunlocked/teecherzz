@@ -20,7 +20,7 @@ export default function Button({
   type = "button",
 }: ButtonProps) {
   const baseStyles =
-    "inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-medium transition-all duration-500 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 active:scale-95";
+    "inline-flex items-center justify-center rounded-full px-10 py-4 text-base font-medium transition-all duration-500 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 active:scale-95 cursor-pointer";
 
   const variantStyles = {
     primary:

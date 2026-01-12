@@ -69,6 +69,34 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Premium visual enhancements */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Selection styling */
+::selection {
+  background-color: rgba(220, 38, 38, 0.2);
+  color: inherit;
+}
+
+/* Focus visible for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Smooth transitions for all interactive elements */
+a, button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Premium image loading state */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
 /* Typography System - Premium Lanima-Inspired Design */
 
 /* Hero Typography - Refined for Premium Feel */
