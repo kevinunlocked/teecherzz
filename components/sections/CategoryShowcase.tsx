@@ -48,36 +48,36 @@ export default function CategoryShowcase() {
             <a
               key={index}
               href={category.href}
-              className={`group relative flex min-h-[200px] overflow-hidden rounded-2xl transition-all duration-300 md:min-h-[240px] ${colorClasses[category.color]}`}
+              className={`group relative flex min-h-[200px] overflow-hidden rounded-2xl transition-all duration-500 ease-in-out hover:shadow-lg hover:scale-[1.02] md:min-h-[240px] ${colorClasses[category.color]}`}
             >
               {/* Text Section - Left */}
-              <div className="relative z-10 flex flex-1 flex-col justify-center p-8">
-                <p className="category-subtitle mb-2 text-foreground/60">
+              <div className="relative z-10 flex flex-1 flex-col justify-center p-8 transition-all duration-500 group-hover:translate-x-1">
+                <p className="category-subtitle mb-2 text-foreground/60 transition-colors duration-300 group-hover:text-foreground/80">
                   {category.subtitle}
                 </p>
-                <h3 className="category-title text-foreground">
+                <h3 className="category-title text-foreground transition-colors duration-300 group-hover:text-[#DC2626]">
                   {category.title}
                 </h3>
                 {category.tagline && (
-                  <p className="mt-2 text-sm font-medium text-foreground/70">
+                  <p className="mt-2 text-sm font-medium text-foreground/70 transition-colors duration-300 group-hover:text-foreground/90">
                     {category.tagline}
                   </p>
                 )}
-                <div className="mt-4 h-0.5 w-12 bg-[#DC2626] transition-all duration-300 group-hover:w-full"></div>
+                <div className="mt-4 h-0.5 w-12 bg-[#DC2626] transition-all duration-500 ease-out group-hover:w-full"></div>
               </div>
               
               {/* Image Section - Right */}
-              <div className="relative flex-shrink-0">
-                <div className="h-full w-32 bg-gradient-to-br from-gray-100 to-gray-200 md:w-40 lg:w-48">
+              <div className="relative flex-shrink-0 overflow-hidden">
+                <div className="h-full w-32 bg-gradient-to-br from-gray-100 to-gray-200 transition-transform duration-500 group-hover:scale-110 md:w-40 lg:w-48">
                   {category.image ? (
                     <img
                       src={category.image}
                       alt={category.title}
-                      className="h-full w-full object-cover"
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                   ) : (
-                    <div className="flex h-full w-full items-center justify-center">
-                      <span className="text-4xl font-bold text-gray-400">
+                    <div className="flex h-full w-full items-center justify-center transition-transform duration-500 group-hover:scale-110">
+                      <span className="text-4xl font-bold text-gray-400 transition-colors duration-300 group-hover:text-gray-600">
                         {category.title.charAt(0)}
                       </span>
                     </div>
