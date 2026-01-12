@@ -49,6 +49,6 @@ export default function Logo({ className = "", showText = false }: LogoProps) {
           </span>
         </div>
       )}
-    </Link>
+    </a>
   );
 }
