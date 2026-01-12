@@ -41,9 +41,9 @@ const categories: Category[] = [
 ];
 
 const colorClasses = {
-  blue: "bg-blue-50 hover:bg-blue-100",
-  orange: "bg-orange-50 hover:bg-orange-100",
-  grey: "bg-gray-50 hover:bg-gray-100",
+  blue: "bg-blue-100/50 hover:bg-blue-100",
+  orange: "bg-orange-100/50 hover:bg-orange-100",
+  grey: "bg-gray-100/50 hover:bg-gray-100",
 };
 
 export default function CategoryShowcase() {
@@ -68,13 +68,13 @@ export default function CategoryShowcase() {
               key={index}
               href={category.href}
               onClick={handleClick}
-              className={`group relative flex min-h-[220px] overflow-hidden rounded-2xl transition-all duration-500 ease-in-out hover:shadow-xl hover:scale-[1.02] md:min-h-[280px] ${colorClasses[category.color]}`}
+              className={`group relative flex min-h-[240px] overflow-hidden rounded-2xl transition-all duration-300 ease-in-out hover:shadow-lg md:min-h-[300px] ${colorClasses[category.color]}`}
               style={{
                 transitionDelay: `${index * 100}ms`,
               }}
             >
               {/* Text Section - Left */}
-              <div className="relative z-10 flex flex-1 flex-col justify-center p-10 transition-all duration-500 group-hover:translate-x-2">
+              <div className="relative z-10 flex flex-1 flex-col justify-center p-8 sm:p-10 transition-all duration-300 group-hover:translate-x-1">
                 <p className="category-subtitle mb-3 text-foreground/60 transition-colors duration-300 group-hover:text-foreground/80">
                   {category.subtitle}
                 </p>
@@ -86,7 +86,7 @@ export default function CategoryShowcase() {
                     {category.tagline}
                   </p>
                 )}
-                <div className="h-0.5 w-12 bg-[#DC2626] transition-all duration-700 ease-out group-hover:w-full origin-left"></div>
+                <div className="h-0.5 w-10 bg-[#DC2626] transition-all duration-500 ease-out group-hover:w-full origin-left"></div>
               </div>
               
               {/* Image Section - Right */}

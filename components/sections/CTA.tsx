@@ -18,11 +18,11 @@ export default function CTA() {
           }`}
         >
           {/* Image - Left Side */}
-          <div className="group relative order-2 aspect-square w-full overflow-hidden rounded-3xl bg-gradient-to-br from-gray-100 to-gray-200 transition-all duration-700 hover:shadow-2xl hover:scale-[1.02] lg:order-1">
+          <div className="group relative order-2 aspect-square w-full overflow-hidden rounded-2xl bg-gradient-to-br from-gray-100 to-gray-200 transition-all duration-300 hover:shadow-lg lg:order-1">
             <img
               src={getShopImagePath("hero-living-room.jpg")}
               alt="Teecherz Furniture"
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               loading="lazy"
             />
           </div>

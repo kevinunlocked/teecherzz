@@ -58,7 +58,7 @@ export default function Features() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="group flex flex-col items-center text-center transition-all duration-500 hover:-translate-y-3 hover:scale-105"
+              className="group flex flex-col items-center text-center transition-all duration-300 hover:-translate-y-2"
               style={{
                 transitionDelay: `${index * 100}ms`,
               }}

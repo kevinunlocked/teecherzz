@@ -90,18 +90,18 @@ export default function FeaturedProducts() {
               key={product.id}
               href={product.href}
               onClick={handleClick}
-              className="group flex flex-col transition-all duration-500 hover:-translate-y-2"
+              className="group flex flex-col transition-all duration-300 hover:-translate-y-1"
               style={{
                 transitionDelay: `${index * 30}ms`,
               }}
             >
-              <div className="relative aspect-square w-full overflow-hidden rounded-xl bg-gray-100 shadow-md transition-all duration-500 group-hover:shadow-xl group-hover:shadow-[#DC2626]/10">
+              <div className="relative aspect-square w-full overflow-hidden rounded-lg bg-gray-100 shadow-sm transition-all duration-300 group-hover:shadow-md">
                 {product.image ? (
                   <>
                     <img
                       src={product.image}
                       alt={product.name}
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                       loading="lazy"
                     />
                     {/* Overlay on hover */}

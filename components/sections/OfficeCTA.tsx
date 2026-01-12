@@ -19,11 +19,11 @@ export default function OfficeCTA() {
         >
           {/* Image Section */}
           <div className="order-2 lg:order-1">
-            <div className="group relative aspect-square w-full overflow-hidden rounded-3xl bg-gradient-to-br from-gray-100 to-gray-200 transition-all duration-700 hover:shadow-2xl hover:scale-[1.02]">
+            <div className="group relative aspect-square w-full overflow-hidden rounded-2xl bg-gradient-to-br from-gray-100 to-gray-200 transition-all duration-300 hover:shadow-lg">
               <img
                 src={getShopImagePath("imgi_25_office2-1.jpg")}
                 alt="Office Furniture"
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
               />
             </div>
