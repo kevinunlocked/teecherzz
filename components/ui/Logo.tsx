@@ -34,7 +34,7 @@ export default function Logo({ className = "", showText = false }: LogoProps) {
             onError={() => setLogoError(true)}
           />
         ) : (
-          <div className="flex h-10 w-10 items-center justify-center rounded bg-[#DC2626] text-white font-bold text-lg shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:shadow-[#DC2626]/30">
+          <div className="flex h-10 w-10 items-center justify-center rounded bg-[#DC2626] text-white font-semibold text-lg shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:shadow-[#DC2626]/30">
             T
           </div>
         )}
@@ -43,7 +43,7 @@ export default function Logo({ className = "", showText = false }: LogoProps) {
       {/* Optional Text - Show brand name if needed */}
       {showText && (
         <div className="flex flex-col">
-          <span className="text-xl font-bold text-white">Teecherz</span>
+          <span className="text-xl font-semibold text-white">Teecherz</span>
           <span className="text-xs uppercase text-gray-300">
             Home & Office
           </span>

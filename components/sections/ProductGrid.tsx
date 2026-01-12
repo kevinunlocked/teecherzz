@@ -122,7 +122,7 @@ export default function ProductGrid() {
                   </>
                 ) : (
                   <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-gray-200 to-gray-300 transition-all duration-300 group-hover:from-gray-300 group-hover:to-gray-400">
-                    <span className="text-4xl font-bold text-gray-400 transition-all duration-300 group-hover:scale-110 group-hover:text-gray-600">
+                    <span className="text-4xl font-semibold text-gray-400 transition-all duration-300 group-hover:scale-110 group-hover:text-gray-600">
                       {product.name.charAt(0)}
                     </span>
                   </div>

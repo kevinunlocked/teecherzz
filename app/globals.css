@@ -173,7 +173,7 @@ img {
 /* Hero Typography - Matching Lanima */
 .hero-heading {
   font-size: clamp(2.75rem, 5.5vw, 5rem);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.1;
   letter-spacing: -0.02em;
   font-feature-settings: "kern" 1, "liga" 1;
@@ -203,7 +203,7 @@ img {
 
 .section-title {
   font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.2;
   letter-spacing: -0.01em;
   margin-bottom: 0;
@@ -221,7 +221,7 @@ img {
 
 .category-title {
   font-size: clamp(1.5rem, 3vw, 2rem);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.2;
   letter-spacing: -0.01em;
   margin-bottom: 0.5rem;
@@ -238,7 +238,7 @@ img {
 
 .product-price {
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.4;
   letter-spacing: 0;
   margin-top: 0.5rem;

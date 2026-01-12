@@ -105,7 +105,7 @@ export default function CategoryShowcase() {
                     </>
                   ) : (
                     <div className="flex h-full w-full items-center justify-center transition-transform duration-500 group-hover:scale-110">
-                      <span className="text-4xl font-bold text-gray-400 transition-colors duration-300 group-hover:text-gray-600">
+                      <span className="text-4xl font-semibold text-gray-400 transition-colors duration-300 group-hover:text-gray-600">
                         {category.title.charAt(0)}
                       </span>
                     </div>

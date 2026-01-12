@@ -48,7 +48,7 @@ export default function OfficeCTA() {
             </div>
 
             <div className="border-t border-gray-200 pt-12">
-              <h3 className="text-2xl font-bold leading-tight text-foreground mb-4">
+              <h3 className="text-2xl font-semibold leading-tight text-foreground mb-4">
                 Make big decisions on our first-class executive desks
               </h3>
               <p className="text-body text-foreground/70 mb-8">
