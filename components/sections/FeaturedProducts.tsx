@@ -75,7 +75,7 @@ export default function FeaturedProducts() {
   };
 
   return (
-    <section className="bg-background py-24 sm:py-32 lg:py-40">
+    <section className="bg-background py-24 sm:py-32 lg:py-40 section-transition">
       <Container>
         <SectionHeader subtitle="FEATURED" title="Featured Products" />
 

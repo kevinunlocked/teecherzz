@@ -31,7 +31,7 @@ export default function ProductSection({
   };
 
   return (
-    <section className="bg-background py-24 sm:py-32 lg:py-40">
+    <section className="bg-background py-24 sm:py-32 lg:py-40 section-transition">
       <Container>
         <div className="mb-12 flex items-center justify-between">
           <h2 className="section-title text-left text-foreground">

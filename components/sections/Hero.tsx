@@ -15,7 +15,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative bg-background min-h-[85vh] sm:min-h-[90vh] flex items-center overflow-hidden">
+    <section className="relative bg-background min-h-[85vh] sm:min-h-[90vh] flex items-center overflow-hidden section-transition">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img

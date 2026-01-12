@@ -9,6 +9,7 @@ import FeaturedProducts from "@/components/sections/FeaturedProducts";
 import OfficeCTA from "@/components/sections/OfficeCTA";
 import Features from "@/components/sections/Features";
 import CTA from "@/components/sections/CTA";
+import SectionWrapper from "@/components/ui/SectionWrapper";
 
 export default function Home() {
   return (
@@ -16,14 +17,30 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <Hero />
-        <CategoryShowcase />
-        <LivingRoomProducts />
-        <BedroomProducts />
-        <DiningRoomProducts />
-        <FeaturedProducts />
-        <OfficeCTA />
-        <Features />
-        <CTA />
+        <SectionWrapper variant="fade" delay={100}>
+          <CategoryShowcase />
+        </SectionWrapper>
+        <SectionWrapper variant="slide-up" delay={150}>
+          <LivingRoomProducts />
+        </SectionWrapper>
+        <SectionWrapper variant="slide-up" delay={200}>
+          <BedroomProducts />
+        </SectionWrapper>
+        <SectionWrapper variant="slide-up" delay={250}>
+          <DiningRoomProducts />
+        </SectionWrapper>
+        <SectionWrapper variant="fade" delay={300}>
+          <FeaturedProducts />
+        </SectionWrapper>
+        <SectionWrapper variant="slide-up" delay={350}>
+          <OfficeCTA />
+        </SectionWrapper>
+        <SectionWrapper variant="fade" delay={400}>
+          <Features />
+        </SectionWrapper>
+        <SectionWrapper variant="slide-up" delay={450}>
+          <CTA />
+        </SectionWrapper>
       </main>
       <Footer />
     </div>

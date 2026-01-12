@@ -11,10 +11,11 @@ export function useScrollAnimation(options?: IntersectionObserverInit) {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          // Optionally disconnect after first trigger
-          if (ref.current) {
-            observer.unobserve(ref.current);
-          }
+          // Keep observing for re-animation on scroll up
+          // Only disconnect if you want one-time animation
+        } else {
+          // Optional: reset on scroll out (for re-animation)
+          // setIsVisible(false);
         }
       },
       {

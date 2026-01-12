@@ -9,7 +9,7 @@ export default function CTA() {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section className="bg-background py-24 sm:py-32 lg:py-40">
+    <section className="bg-background py-24 sm:py-32 lg:py-40 section-transition">
       <Container>
         <div
           ref={ref}

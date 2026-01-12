@@ -87,7 +87,7 @@ export default function ProductGrid() {
   };
 
   return (
-    <section className="bg-background py-24 sm:py-32 lg:py-40">
+    <section className="bg-background py-24 sm:py-32 lg:py-40 section-transition">
       <Container>
         <SectionHeader
           subtitle="RECENTLY RELEASED"

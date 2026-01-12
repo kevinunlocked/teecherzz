@@ -42,7 +42,7 @@ export default function Features() {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section className="bg-background py-24 sm:py-32 lg:py-40">
+    <section className="bg-background py-24 sm:py-32 lg:py-40 section-transition">
       <Container>
         <div className="mb-16 text-center">
           <h2 className="section-title text-foreground">
