@@ -35,7 +35,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-foreground/10 bg-background/98 backdrop-blur-md supports-[backdrop-filter]:bg-background/80 shadow-sm">
       <Container>
-        <div className="flex h-20 sm:h-24 md:h-28 items-center justify-between">
+        <div className="flex h-16 items-center justify-between">
           <Logo />
 
           <nav className="hidden items-center space-x-6 lg:space-x-8 md:flex">

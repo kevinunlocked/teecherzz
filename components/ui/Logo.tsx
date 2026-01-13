@@ -29,7 +29,7 @@ export default function Logo({ className = "", showText = false }: LogoProps) {
       className={`group flex items-center space-x-3 transition-all duration-300 hover:scale-105 ${className}`}
     >
       {/* Logo Image - Show fallback immediately, load image after mount */}
-      <div className="relative h-14 w-14 sm:h-16 sm:w-16 md:h-20 md:w-20 lg:h-24 lg:w-24 flex-shrink-0 transition-transform duration-300 group-hover:rotate-3">
+      <div className="relative h-10 w-10 flex-shrink-0 transition-transform duration-300 group-hover:rotate-3">
         {isMounted && !logoError ? (
           <Image
             src="/logo-1.png"
@@ -40,7 +40,7 @@ export default function Logo({ className = "", showText = false }: LogoProps) {
             onError={() => setLogoError(true)}
           />
         ) : (
-          <div className="flex h-full w-full items-center justify-center rounded bg-[#DC2626] text-white font-semibold text-xl sm:text-2xl md:text-3xl shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:shadow-[#DC2626]/30">
+          <div className="flex h-10 w-10 items-center justify-center rounded bg-[#DC2626] text-white font-semibold text-lg shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:shadow-[#DC2626]/30">
             T
           </div>
         )}
@@ -49,8 +49,8 @@ export default function Logo({ className = "", showText = false }: LogoProps) {
       {/* Optional Text - Show brand name if needed */}
       {showText && (
         <div className="flex flex-col">
-          <span className="text-xl sm:text-2xl md:text-3xl font-semibold text-white">Teecherz</span>
-          <span className="text-xs sm:text-sm uppercase text-gray-300">
+          <span className="text-xl font-semibold text-white">Teecherz</span>
+          <span className="text-xs uppercase text-gray-300">
             Home & Office
           </span>
         </div>
