@@ -39,10 +39,9 @@ export default function SectionHeader({
         {title}
       </h2>
       <div
-        className={`h-0.5 w-12 sm:w-16 bg-[#DC2626] transition-all duration-700 ${
+        className={`h-0.5 w-12 sm:w-16 bg-[#DC2626] transition-opacity duration-500 ${
           align === "center" ? "mx-auto" : align === "right" ? "ml-auto" : ""
-        } ${isVisible ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"}`}
-        style={{ transformOrigin: align === "right" ? "right" : align === "left" ? "left" : "center" }}
+        } ${isVisible ? "opacity-100" : "opacity-0"}`}
       ></div>
     </div>
   );

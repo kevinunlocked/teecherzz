@@ -336,18 +336,7 @@ img {
   letter-spacing: 0;
 }
 
-/* Premium Animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+/* Simplified Animations for Performance */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -357,92 +346,64 @@ img {
   }
 }
 
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.animate-fade-in-up {
-  animation: fadeInUp 0.8s ease-out forwards;
-}
-
 .animate-fade-in {
-  animation: fadeIn 0.6s ease-out forwards;
+  animation: fadeIn 0.5s ease-out forwards;
 }
 
-.animate-slide-in-left {
-  animation: slideInLeft 0.8s ease-out forwards;
+/* Disable animations on mobile for better performance */
+@media (max-width: 768px) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  /* Keep only essential transitions */
+  a, button {
+    transition: color 0.2s, background-color 0.2s;
+  }
 }
 
-.animate-slide-in-right {
-  animation: slideInRight 0.8s ease-out forwards;
-}
-
-/* Premium Scroll-triggered animations */
+/* Premium Scroll-triggered animations - Optimized for performance */
 .fade-in-on-scroll {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
-              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.5s ease-out;
 }
 
 .fade-in-on-scroll.visible {
   opacity: 1;
-  transform: translateY(0);
 }
 
-/* Section transition wrapper */
+/* Section transition wrapper - Removed will-change for better performance */
 .section-transition {
-  will-change: opacity, transform;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
 
-/* Smooth section reveals */
+/* Smooth section reveals - Simplified for performance */
 @keyframes sectionReveal {
   from {
     opacity: 0;
-    transform: translateY(40px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
 .section-reveal {
-  animation: sectionReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: sectionReveal 0.5s ease-out forwards;
 }
 
-/* Parallax effect for sections */
-.section-parallax {
-  transform: translateZ(0);
-  will-change: transform;
+/* Performance optimizations */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
-
-/* Stagger animation delays */
-.stagger-1 { animation-delay: 0.1s; }
-.stagger-2 { animation-delay: 0.2s; }
-.stagger-3 { animation-delay: 0.3s; }
-.stagger-4 { animation-delay: 0.4s; }
-.stagger-5 { animation-delay: 0.5s; }
-.stagger-6 { animation-delay: 0.6s; }
-.stagger-7 { animation-delay: 0.7s; }
-.stagger-8 { animation-delay: 0.8s; }

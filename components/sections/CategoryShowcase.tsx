@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Container from "../ui/Container";
 import { getShopImagePath } from "@/utils/imagePath";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
@@ -59,8 +60,8 @@ export default function CategoryShowcase() {
       <Container>
         <div
           ref={ref}
-          className={`grid grid-cols-1 gap-6 sm:gap-8 md:gap-10 md:grid-cols-3 transition-all duration-1000 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+          className={`grid grid-cols-1 gap-6 sm:gap-8 md:gap-10 md:grid-cols-3 transition-opacity duration-500 ${
+            isVisible ? "opacity-100" : "opacity-0"
           }`}
         >
           {categories.map((category, index) => (
@@ -68,10 +69,7 @@ export default function CategoryShowcase() {
               key={index}
               href={category.href}
               onClick={handleClick}
-              className={`group relative flex min-h-[200px] sm:min-h-[240px] overflow-hidden rounded-xl sm:rounded-2xl transition-all duration-300 ease-in-out active:scale-[0.98] md:min-h-[300px] touch-manipulation ${colorClasses[category.color]}`}
-              style={{
-                transitionDelay: `${index * 100}ms`,
-              }}
+              className={`group relative flex min-h-[200px] sm:min-h-[240px] overflow-hidden rounded-xl sm:rounded-2xl transition-transform duration-200 active:scale-[0.98] md:min-h-[300px] touch-manipulation ${colorClasses[category.color]}`}
             >
               {/* Text Section - Left */}
               <div className="relative z-10 flex flex-1 flex-col justify-center p-6 sm:p-8 md:p-10 transition-all duration-300 group-hover:translate-x-1">
@@ -91,21 +89,24 @@ export default function CategoryShowcase() {
               
               {/* Image Section - Right */}
               <div className="relative flex-shrink-0 overflow-hidden">
-                <div className="relative h-full w-32 bg-gradient-to-br from-gray-100 to-gray-200 transition-transform duration-500 group-hover:scale-110 md:w-40 lg:w-48">
+                <div className="relative h-full w-32 bg-gradient-to-br from-gray-100 to-gray-200 md:w-40 lg:w-48">
                   {category.image ? (
                     <>
-                      <img
+                      <Image
                         src={category.image}
                         alt={category.title}
-                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        fill
+                        sizes="(max-width: 768px) 128px, (max-width: 1024px) 160px, 192px"
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
                         loading="lazy"
+                        quality={80}
                       />
                       {/* Subtle overlay */}
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-black/5"></div>
                     </>
                   ) : (
-                    <div className="flex h-full w-full items-center justify-center transition-transform duration-500 group-hover:scale-110">
-                      <span className="text-4xl font-semibold text-gray-400 transition-colors duration-300 group-hover:text-gray-600">
+                    <div className="flex h-full w-full items-center justify-center">
+                      <span className="text-4xl font-semibold text-gray-400">
                         {category.title.charAt(0)}
                       </span>
                     </div>

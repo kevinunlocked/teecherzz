@@ -51,25 +51,22 @@ export default function Features() {
         </div>
         <div
           ref={ref}
-          className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 md:gap-12 transition-all duration-1000 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+          className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 md:gap-12 transition-opacity duration-500 ${
+            isVisible ? "opacity-100" : "opacity-0"
           }`}
         >
           {features.map((feature, index) => (
             <div
               key={index}
-              className="group flex flex-col items-center text-center transition-all duration-300 hover:-translate-y-2"
-              style={{
-                transitionDelay: `${index * 100}ms`,
-              }}
+              className="group flex flex-col items-center text-center transition-transform duration-200"
             >
-              <div className="mb-8 flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:text-[#DC2626]">
+              <div className="mb-8 flex items-center justify-center transition-transform duration-200 group-hover:scale-105">
                 {feature.icon}
               </div>
-              <h3 className="mb-4 text-lg font-semibold text-foreground transition-colors duration-300 group-hover:text-[#DC2626]">
+              <h3 className="mb-4 text-lg font-semibold text-foreground transition-colors duration-200 group-hover:text-[#DC2626]">
                 {feature.title}
               </h3>
-              <p className="text-sm leading-relaxed text-foreground/70 transition-colors duration-300 group-hover:text-foreground/90">
+              <p className="text-sm leading-relaxed text-foreground/70 transition-colors duration-200 group-hover:text-foreground/90">
                 {feature.description}
               </p>
             </div>

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Container from "../ui/Container";
 import SectionHeader from "../ui/SectionHeader";
 import Button from "../ui/Button";
@@ -96,8 +97,8 @@ export default function ProductGrid() {
 
         <div
           ref={ref}
-          className={`grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 lg:gap-10 transition-all duration-1000 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+          className={`grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 lg:gap-10 transition-opacity duration-500 ${
+            isVisible ? "opacity-100" : "opacity-0"
           }`}
         >
           {products.map((product, index) => (
@@ -105,24 +106,22 @@ export default function ProductGrid() {
               key={product.id}
               href={product.href}
               onClick={handleClick}
-              className="group flex flex-col transition-all duration-300 hover:-translate-y-1 active:scale-[0.98] touch-manipulation"
-              style={{
-                transitionDelay: `${index * 50}ms`,
-              }}
+              className="group flex flex-col transition-transform duration-200 active:scale-[0.98] touch-manipulation"
             >
-              <div className="relative aspect-square w-full overflow-hidden rounded-lg bg-gray-100 shadow-sm transition-all duration-300 group-hover:shadow-md">
+              <div className="relative aspect-square w-full overflow-hidden rounded-lg bg-gray-100 shadow-sm">
                 {product.image ? (
-                  <>
-                    <img
-                      src={product.image}
-                      alt={product.name}
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-                      loading="lazy"
-                    />
-                  </>
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
+                    quality={80}
+                  />
                 ) : (
-                  <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-gray-200 to-gray-300 transition-all duration-300 group-hover:from-gray-300 group-hover:to-gray-400">
-                    <span className="text-4xl font-semibold text-gray-400 transition-all duration-300 group-hover:scale-110 group-hover:text-gray-600">
+                  <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-gray-200 to-gray-300">
+                    <span className="text-4xl font-semibold text-gray-400">
                       {product.name.charAt(0)}
                     </span>
                   </div>
@@ -149,8 +148,8 @@ export default function ProductGrid() {
           ))}
         </div>
 
-        <div className={`mt-10 sm:mt-12 md:mt-16 text-center transition-all duration-1000 delay-500 ${
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        <div className={`mt-10 sm:mt-12 md:mt-16 text-center transition-opacity duration-500 delay-300 ${
+          isVisible ? "opacity-100" : "opacity-0"
         }`}>
           <Button href="/shop" variant="primary" className="w-full sm:w-auto min-h-[48px] touch-manipulation">
             View All Products

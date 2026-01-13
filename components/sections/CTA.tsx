@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Container from "../ui/Container";
 import Button from "../ui/Button";
 import { getShopImagePath } from "@/utils/imagePath";
@@ -9,21 +10,24 @@ export default function CTA() {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section className="bg-background py-16 sm:py-24 md:py-32 lg:py-40 section-transition">
+    <section className="bg-background py-16 sm:py-24 md:py-32 lg:py-40">
       <Container>
         <div
           ref={ref}
-          className={`grid grid-cols-1 gap-10 sm:gap-12 md:gap-16 lg:grid-cols-2 lg:items-center transition-all duration-1000 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+          className={`grid grid-cols-1 gap-10 sm:gap-12 md:gap-16 lg:grid-cols-2 lg:items-center transition-opacity duration-500 ${
+            isVisible ? "opacity-100" : "opacity-0"
           }`}
         >
           {/* Image - Left Side */}
-          <div className="group relative order-2 aspect-square w-full overflow-hidden rounded-2xl bg-gradient-to-br from-gray-100 to-gray-200 transition-all duration-300 hover:shadow-lg lg:order-1">
-            <img
+          <div className="group relative order-2 aspect-square w-full overflow-hidden rounded-2xl bg-gradient-to-br from-gray-100 to-gray-200 lg:order-1">
+            <Image
               src={getShopImagePath("hero-living-room.jpg")}
               alt="Teecherz Furniture"
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover transition-transform duration-300 group-hover:scale-105"
               loading="lazy"
+              quality={80}
             />
           </div>
           {/* Content - Right Side */}

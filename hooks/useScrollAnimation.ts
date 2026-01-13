@@ -5,33 +5,42 @@ import { useEffect, useRef, useState } from "react";
 export function useScrollAnimation(options?: IntersectionObserverInit) {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+  const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    // Disconnect existing observer if any
+    if (observerRef.current) {
+      observerRef.current.disconnect();
+    }
+
+    // Use passive observer for better performance
+    observerRef.current = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          // Keep observing for re-animation on scroll up
-          // Only disconnect if you want one-time animation
-        } else {
-          // Optional: reset on scroll out (for re-animation)
-          // setIsVisible(false);
+          // Disconnect after first trigger for performance
+          if (observerRef.current && ref.current) {
+            observerRef.current.unobserve(ref.current);
+          }
         }
       },
       {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px",
+        threshold: 0.05,
+        rootMargin: "50px",
         ...options,
       }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
+    const currentRef = ref.current;
+    const currentObserver = observerRef.current;
+
+    if (currentRef && currentObserver) {
+      currentObserver.observe(currentRef);
     }
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
+      if (currentObserver && currentRef) {
+        currentObserver.unobserve(currentRef);
       }
     };
   }, []);
