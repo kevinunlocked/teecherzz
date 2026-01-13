@@ -88,7 +88,7 @@ export default function ProductGrid() {
   };
 
   return (
-    <section className="bg-background py-16 sm:py-24 md:py-32 lg:py-40 section-transition">
+    <section className="bg-background py-16 sm:py-24 md:py-32 lg:py-40">
       <Container>
         <SectionHeader
           subtitle="RECENTLY RELEASED"
@@ -97,9 +97,7 @@ export default function ProductGrid() {
 
         <div
           ref={ref}
-          className={`grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 lg:gap-10 transition-opacity duration-500 ${
-            isVisible ? "opacity-100" : "opacity-0"
-          }`}
+          className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 lg:gap-10"
         >
           {products.map((product, index) => (
             <a
@@ -148,9 +146,7 @@ export default function ProductGrid() {
           ))}
         </div>
 
-        <div className={`mt-10 sm:mt-12 md:mt-16 text-center transition-opacity duration-500 delay-300 ${
-          isVisible ? "opacity-100" : "opacity-0"
-        }`}>
+        <div className="mt-10 sm:mt-12 md:mt-16 text-center">
           <Button href="/shop" variant="primary" className="w-full sm:w-auto min-h-[48px] touch-manipulation">
             View All Products
           </Button>

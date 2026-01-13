@@ -14,9 +14,7 @@ export default function CTA() {
       <Container>
         <div
           ref={ref}
-          className={`grid grid-cols-1 gap-10 sm:gap-12 md:gap-16 lg:grid-cols-2 lg:items-center transition-opacity duration-500 ${
-            isVisible ? "opacity-100" : "opacity-0"
-          }`}
+          className="grid grid-cols-1 gap-10 sm:gap-12 md:gap-16 lg:grid-cols-2 lg:items-center"
         >
           {/* Image - Left Side */}
           <div className="group relative order-2 aspect-square w-full overflow-hidden rounded-2xl bg-gradient-to-br from-gray-100 to-gray-200 lg:order-1">

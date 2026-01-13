@@ -56,13 +56,11 @@ export default function CategoryShowcase() {
   };
 
   return (
-    <section className="bg-background py-16 sm:py-24 md:py-32 lg:py-40 section-transition">
+    <section className="bg-background py-16 sm:py-24 md:py-32 lg:py-40">
       <Container>
         <div
           ref={ref}
-          className={`grid grid-cols-1 gap-6 sm:gap-8 md:gap-10 md:grid-cols-3 transition-opacity duration-500 ${
-            isVisible ? "opacity-100" : "opacity-0"
-          }`}
+          className="grid grid-cols-1 gap-6 sm:gap-8 md:gap-10 md:grid-cols-3"
         >
           {categories.map((category, index) => (
             <a

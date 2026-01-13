@@ -32,7 +32,7 @@ export default function ProductSection({
   };
 
   return (
-    <section className="bg-background py-16 sm:py-24 md:py-32 lg:py-40 section-transition">
+    <section className="bg-background py-16 sm:py-24 md:py-32 lg:py-40">
       <Container>
         <div className="mb-8 sm:mb-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <h2 className="section-title text-left text-foreground">
@@ -45,9 +45,7 @@ export default function ProductSection({
 
         <div
           ref={ref}
-          className={`grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 lg:gap-10 transition-opacity duration-500 ${
-            isVisible ? "opacity-100" : "opacity-0"
-          }`}
+          className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 lg:gap-10"
         >
           {products.map((product) => (
             <a

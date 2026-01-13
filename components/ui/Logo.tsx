@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface LogoProps {
   className?: string;
@@ -10,6 +10,12 @@ interface LogoProps {
 
 export default function Logo({ className = "", showText = false }: LogoProps) {
   const [logoError, setLogoError] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  // Defer image loading until after mount
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
@@ -22,9 +28,9 @@ export default function Logo({ className = "", showText = false }: LogoProps) {
       onClick={handleClick}
       className={`group flex items-center space-x-3 transition-all duration-300 hover:scale-105 ${className}`}
     >
-      {/* Logo Image */}
+      {/* Logo Image - Show fallback immediately, load image after mount */}
       <div className="relative h-10 w-10 flex-shrink-0 transition-transform duration-300 group-hover:rotate-3">
-        {!logoError ? (
+        {isMounted && !logoError ? (
           <Image
             src="/logo-1.png"
             alt="Teecherz Home & Office"
